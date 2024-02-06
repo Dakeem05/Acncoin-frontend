@@ -1,0 +1,10 @@
+
+<template>
+  <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M7.5 17V3h11v14zm1-1h9V4h-9zm-4 4V6.615h1V19h9.385v1zm4-4V4z"></path></svg>
+</template>
+
+<script>
+export default {
+  name: 'MaterialSymbolsLightContentCopyOutlineSharp'
+}
+</script>
