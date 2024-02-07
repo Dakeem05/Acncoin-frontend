@@ -1,5 +1,5 @@
 <script setup>
-    import { ref, watch } from "vue";
+    import { ref, onMounted, onBeforeUnmount } from "vue";
     import Copy from "../Icons/Copy.vue";
 
       const isPresaleCopied = ref(false);
@@ -17,38 +17,37 @@ window.addEventListener('resize', function() {
   width.value = window.innerWidth;
 });
 
+  
 
-    const copyPresaleAddress = async () => {
-    // console.log(address.value.innerHTML)
-    try {
-      await navigator.clipboard.writeText(presaleAddress.value.innerHTML);
-      // console.log('Content copied to clipboard');
-        isPresaleCopied.value = true;
-        // presaleButton.value.innerHTML = cpied
-      setInterval(() => {
-        isPresaleCopied.value = false;
-        
-      }, 5000);
-    } catch (err) {
-      console.error('Failed to copy: ', err);
-    }
-  }
+  const animate = ref(null);
+  // const animate1 = ref(null);
+  // const animate2 = ref(null);
+  const section1Visible = ref(false);
+// const section2Visible = ref(false);
+// const section3Visible = ref(false);
 
-    const copyContractAddress = async () => {
-    // console.log(address.value.innerHTML)
-    try {
-      await navigator.clipboard.writeText(contractAddress.value.innerHTML);
-      // console.log('Content copied to clipboard');
-        isContractCopied.value = true;
-        // presaleButton.value.innerHTML = cpied
-      setInterval(() => {
-        isContractCopied.value = false;
-        
-      }, 5000);
-    } catch (err) {
-      console.error('Failed to copy: ', err);
-    }
-  }
+const options = {
+  threshold: 0 // Adjust threshold as needed
+};
+
+  
+
+  const callback = (entries) => {
+  entries.forEach((entry) => {
+    if (entry.target === animate.value && entry.isIntersecting) {
+      section1Visible.value = true;
+    } 
+    // Add more conditions for other sections if needed
+  });
+};
+const observer = new IntersectionObserver(callback, options);
+
+  onMounted(() => {
+    observer.observe(animate.value);
+  })
+
+
+
 
 const items = ref([
         {
@@ -90,19 +89,19 @@ const items = ref([
 
 <template>
   <section class="max-w-6xl z-50 gap-[2rem] pb-[3rem] lg:pb-0 lg:gap-0   px-[0.8rem] xs:px-[1rem] sm:px-[2rem] xl:px-[0] mx-auto">
-    <h1 class=" text-[2.5rem] md:text-[3.5rem] capitalize text-center">roadmap</h1>
-    <section class="lg:w-[80%] sm:mx-auto container mt-[2rem] py-[2rem] sm:p-[2rem]">
+    <h1 ref="animate" class=" text-[2.5rem] md:text-[3.5rem] capitalize text-center">roadmap</h1>
+    <section  :class="{ 'visible': section1Visible }" class="section lg:w-[80%] sm:mx-auto container mt-[2rem] py-[2rem] sm:p-[2rem]">
         
         <v-timeline align="start" 
-      :side="width < 1024 ? 'end' : ''" line-color="rgba(255, 255, 255, 0.36)" density="compact" truncate-line="both">
-        <v-timeline-item
+      :side="width < 1024 ? 'end' : 'both'" :density="width < 1024 ? 'compact' : 'loose'" line-color="rgba(255, 255, 255, 0.36)"  truncate-line="both">
+        <v-timeline-item 
           v-for="(item, i) in items"
           :key="i"
           dot-color="#BDBCBC"
           fill-dot
           size="0.9rem"
         >
-          <v-card class="bg -ml-[1.3rem] sm:ml-0">
+          <v-card  class="bg -ml-[1.3rem] sm:ml-0">
             <v-card-title class="">
               <p class="text-[#bd8f31] text-[15px]">{{item.date}}</p>
             </v-card-title>
@@ -135,4 +134,12 @@ backdrop-filter: blur(9.2px) !important;
 -webkit-backdrop-filter: blur(9.2px) !important;
 border: 1px solid rgba(255, 255, 255, 0.23) !important;
   }
+  .section {
+  transform: translateY(100%);
+  transition: transform 0.5s ease;
+}
+
+.section.visible {
+  transform: translateY(0);
+}
 </style>

@@ -32,28 +32,13 @@ const observer = new IntersectionObserver(callback, options);
     observer.observe(animate.value);
   observer.observe(animate1.value);
   observer.observe(animate2.value);
-    //    const observer = new IntersectionObserver(onIntersection, { threshold: 0,   once: true, }); // You can adjust the threshold value as needed
-    // const observer1 = new IntersectionObserver(onIntersection1, { threshold: 0,   once: true, }); // You can adjust the threshold value as needed
-    // const observer2 = new IntersectionObserver(onIntersection2, { threshold: 0,   once: true, }); // You can adjust the threshold value as needed
-    //  if (animate.value) {
-    //   observer.observe(animate.value);
-    // }
-    // if (animate1.value) {
-    //   observer1.observe(animate1.value);
-    // }
-    // if (animate2.value) {
-    //   observer2.observe(animate2.value);
-    // }
   })
 
-//   onBeforeUnmount(() => {
-//   clearInterval(intervalId);
-// });
 </script>
 
 <template>
   <section class="max-w-6xl z-50 gap-[2rem] pb-[3rem] lg:pb-0 lg:gap-0   px-[0.8rem] xs:px-[1rem] sm:px-[2rem] xl:px-[0] mx-auto">
-    <h1 class=" text-[2.5rem] md:text-[3.5rem] text-center">About</h1>
+    <h1 class="text-[2.5rem] md:text-[3.5rem] text-center">About</h1>
     <section  class="flex mt-[2rem] lg:flex-row flex-col">
         <div class="lg:w-[45%] relative">
             <img src="../../assets/Images/about-removebg.png" class="right-0 left-0 mx-auto lg:my-auto lg:top-0 lg:bottom-0 absolute" alt="">

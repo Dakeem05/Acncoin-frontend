@@ -1,8 +1,16 @@
 <script setup>
-    import { ref } from "vue";
     import Copy from "../Icons/Copy.vue";
     import Tokenomics from "../charts/Tokenomics.vue";
+    import { ref, onMounted, onBeforeUnmount } from "vue";
 
+  const animate = ref(null);
+  // const animate2 = ref(null);
+  const section1Visible = ref(false);
+// const section3Visible = ref(false);
+
+const options = {
+  threshold: 0 // Adjust threshold as needed
+};
       const isPresaleCopied = ref(false);
     const contractAddress = ref(null);
     const presaleAddress = ref(null);
@@ -42,13 +50,29 @@
       console.error('Failed to copy: ', err);
     }
   }
+
+
+    const callback = (entries) => {
+  entries.forEach((entry) => {
+    if (entry.target === animate.value && entry.isIntersecting) {
+      section1Visible.value = true;
+    }
+    // Add more conditions for other sections if needed
+  });
+};
+const observer = new IntersectionObserver(callback, options);
+
+  onMounted(() => {
+    observer.observe(animate.value);
+  //observer.observe(animate2.value);
+  })
 </script>
 
 <template>
   <section class="max-w-6xl z-50 gap-[2rem] pb-[3rem] lg:pb-0 lg:gap-0   px-[0.8rem] xs:px-[1rem] sm:px-[2rem] xl:px-[0] mx-auto">
-    <h1 class="text-[2.5rem] md:text-[3.5rem] capitalize text-center">tokenomics</h1>
-    <section class="flex mt-[2rem] lg:flex-row flex-col">
-        <div class="lg:w-[45%] relative bg  px-[2rem] py-[1.5rem]">
+    <h1  class="text-[2.5rem] md:text-[3.5rem] capitalize text-center">tokenomics</h1>
+    <section ref="animate" class="flex mt-[2rem] lg:flex-row flex-col">
+        <div  :class="{ 'visible': section1Visible }" class="section lg:w-[45%] relative bg  px-[2rem] py-[1.5rem]">
             <h1 class="text-3xl sm:text-[2.4rem]"> <span class="font-Oversa text-[#bd8f31]">Acncoin</span> Token metrics</h1>
             <div class="grid grid-cols-2">
                 <h1 class="mt-[1rem] text-lg sm:text-[1.4rem]">Token name:</h1>
@@ -70,7 +94,7 @@
             </div>
        
         </div> 
-        <div class="mt-[3rem] lg:mt-0 lg:w-[55%]">
+        <div :class="{ 'visible': section1Visible }" class="section1 mt-[3rem] lg:mt-0 lg:w-[55%]">
             <tokenomics/>
         </div>
     </section>
@@ -129,13 +153,17 @@ backdrop-filter: blur(7.7px);
           }
 }
 
-.gone-up{
-  /* background:transparent url(../assets/Images/twinkling.png) repeat top center; */
-  z-index:1;
-  -moz-animation:up 200s linear infinite;
-  -ms-animation:up 200s linear infinite;
-  -o-animation:up 200s linear infinite;
-  -webkit-animation:up 200s linear infinite;
-  animation:up 200s linear infinite;
+.section {
+  transform: translateY(100%);
+  transition: transform 0.5s ease;
 }
+.section1 {
+  transform: translateY(100%);
+  transition: transform 0.8s ease;
+}
+
+.visible {
+  transform: translateY(0);
+}
+
 </style>

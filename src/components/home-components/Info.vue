@@ -1,5 +1,5 @@
 <script setup>
-    import { ref } from "vue";
+    import { onMounted, ref } from "vue";
     import Speed from "../Icons/Speed.vue";
     import Simple from "../Icons/Simple.vue";
     import Transaction from "../Icons/Transaction.vue";
@@ -7,13 +7,44 @@
     import Security from "../Icons/Security.vue";
     import Cost from "../Icons/Cost.vue";
     import Footer from "../common-components/Footer.vue";
+
+      const animate = ref(null);
+  const animate1 = ref(null);
+  // const animate2 = ref(null);
+  const section1Visible = ref(false);
+const section2Visible = ref(false);
+// const section3Visible = ref(false);
+
+const options = {
+  threshold: 0 // Adjust threshold as needed
+};
+
+  
+
+  const callback = (entries) => {
+  entries.forEach((entry) => {
+    if (entry.target === animate.value && entry.isIntersecting) {
+      section1Visible.value = true;
+    }  else if (entry.target === animate1.value && entry.isIntersecting) {
+      section2Visible.value = true;
+    } 
+    // Add more conditions for other sections if needed
+  });
+};
+const observer = new IntersectionObserver(callback, options);
+
+  onMounted(() => {
+    observer.observe(animate.value);
+    observer.observe(animate1.value);
+  })
+
 </script>
 
 <template>
   <section class="max-w-6xl z-50 gap-[2rem] pb-[3rem] lg:pb-0 lg:gap-0   px-[0.8rem] xs:px-[1rem] sm:px-[2rem] xl:px-[0] mx-auto">
     <h1 class="text-[2.5rem] md:text-[3.5rem] capitalize text-center">Why buy <span class="font-Oversa text-[#bd8f31]">$Acn</span></h1>
-    <section class="flex mt-[2rem] gap-[1rem] lg:flex-row flex-col">
-        <div class="lg:w-[50%] relative  flex flex-col gap-[2rem]  py-[1.5rem]">
+    <section ref="animate" class="flex mt-[2rem] gap-[1rem] lg:flex-row flex-col">
+        <div :class="{ 'visible': section1Visible }" class="section lg:w-[50%] relative  flex flex-col gap-[2rem]  py-[1.5rem]">
           <span class="flex flex-col sm:flex-row gap-6 py-[1rem]  relative">
             <div class="box my-auto">
               <p class=""><speed/></p>
@@ -42,7 +73,7 @@
             </div>
           </span>
         </div>
-        <div class="lg:w-[50%] relative  flex flex-col gap-[2rem]  py-[1.5rem]">
+        <div :class="{ 'visible': section1Visible }" class="section1 lg:w-[50%] relative  flex flex-col gap-[2rem]  py-[1.5rem]">
           <span class="flex flex-col sm:flex-row gap-6 py-[1rem]  relative">
             <div class="box my-auto">
               <p class=""><simple/></p>
@@ -75,8 +106,8 @@
 
    <div>
       <h1 class="text-[2.5rem] md:text-[3.5rem] mt-[3rem] capitalize text-center">HOW TO BUY <span class="font-Oversa text-[#bd8f31]">$Acn</span></h1>
-      <section class="flex relative mt-[2rem] gap-[1rem] flex-row ">
-          <div class="lg:w-[50%] z-10 container  relative  flex flex-col gap-[2rem]  py-[1.5rem]">
+      <section ref="animate1" class="flex relative mt-[2rem] gap-[1rem] flex-row ">
+          <div :class="{ 'visible': section2Visible }" class="section lg:w-[50%] z-10 container  relative  flex flex-col gap-[2rem]  py-[1.5rem]">
             <span class="flex gap-[6px] py-[1rem]  relative">
               <div class=" relative  ">
                 <p class="text-[3rem] -mt-[2rem] h-fit text-[#BD8F31] text-center">.</p>
@@ -118,7 +149,7 @@
               </div>
             </span>
           </div>
-          <div class="absolute top-0 bottom-0 my-auto right-0 left-0 mx-auto w-fit h-fit lg:relative lg:w-[50%]   gap-[2rem]  py-[1.5rem]">
+          <div :class="{ 'visible': section2Visible }" class="section1 absolute top-0 bottom-0 my-auto right-0 left-0 mx-auto w-fit h-fit lg:relative lg:w-[50%]   gap-[2rem]  py-[1.5rem]">
             <img src="../../assets/Images/end.png" class="rounded-lg" alt="">
           </div>
       </section>
@@ -131,7 +162,18 @@
 </template>
 
 <style scoped>
+.section {
+  transform: translateY(100%);
+  transition: transform 0.5s ease;
+}
+.section1 {
+  transform: translateY(100%);
+  transition: transform 0.8s ease;
+}
 
+.visible {
+  transform: translateY(0);
+}
 
 
 .box {
