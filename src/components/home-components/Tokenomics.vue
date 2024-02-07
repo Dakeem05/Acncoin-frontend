@@ -47,7 +47,7 @@
   <section class="max-w-6xl z-50 gap-[2rem] pb-[3rem] lg:pb-0 lg:gap-0   px-[0.5rem] xs:px-[1rem] sm:px-[2rem] xl:px-[0] mx-auto">
     <h1 class="text-[2.5rem] md:text-[3.5rem] capitalize text-center">tokenomics</h1>
     <section class="flex mt-[2rem] lg:flex-row flex-col">
-        <div class="lg:w-[45%] relative bg px-[2rem] py-[1.5rem]">
+        <div class="lg:w-[45%] relative bg  px-[2rem] py-[1.5rem]">
             <h1 class="text-3xl sm:text-[2.4rem]"> <span class="font-Oversa text-[#bd8f31]">Acncoin</span> Token metrics</h1>
             <div class="grid grid-cols-2">
                 <h1 class="mt-[1rem] text-lg sm:text-[1.4rem]">Token name:</h1>
@@ -67,42 +67,7 @@
                 <span class="hidden" ref="presaleAddress">0x29367a6d16F1c0f8320A466D2f24e1971045757B</span>
                 <h1 class="mt-[1rem] text-lg sm:text-[1.4rem] ml-[10%] flex gap-1"><span>0x29...757B</span><button @click="copyPresaleAddress" class="pt-[1.8px]" :class="{'text-[#bd8f31]' : isPresaleCopied}"><copy/></button></h1>
             </div>
-            <!-- <table class="flex">
-                <thead>
-                    <td>jj</td>
-                    <td>jj</td>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>
-                        <h1>Token name</h1>
-                    </td>
-                    <td>
-                        <h1>Token name</h1>
-                    </td>
-                    <td>
-                        <h1>Token name</h1>
-                    </td>
-                    <td>
-                        <h1>Token name</h1>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <h1>ACNCOIN</h1>
-                    </td>
-                    <td>
-                        <h1>ACNCOIN</h1>
-                    </td>
-                    <td>
-                        <h1>ACNCOIN</h1>
-                    </td>
-                    <td>
-                        <h1>ACNCOIN</h1>
-                    </td>
-                </tr>
-                </tbody>
-            </table> -->
+       
         </div> 
         <div class="lg:w-[55%]">
             
@@ -121,4 +86,55 @@ box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 backdrop-filter: blur(7.7px);
 -webkit-backdrop-filter: blur(7.7px);
   }
+
+  @keyframes up {
+      from {
+            transform: "translateY(10.75rem)";
+            opacity: '0'
+          }
+          to {
+            transform: "translateY(0rem)";
+            opacity: '1'
+          }
+}
+@-webkit-keyframes up {
+  from {
+            transform: "translateY(10.75rem)";
+            opacity: '0'
+          }
+          to {
+            transform: "translateY(0rem)";
+            opacity: '1'
+          }
+}
+@-moz-keyframes up {
+     from {
+            transform: "translateY(10.75rem)";
+            opacity: '0'
+          }
+          to {
+            transform: "translateY(0rem)";
+            opacity: '1'
+          }
+}
+@-ms-keyframes up {
+    from {
+            transform: "translateY(10.75rem)";
+            opacity: '0'
+          }
+          to {
+            transform: "translateY(0rem)";
+            opacity: '1'
+          }
+}
+
+.gone-up{
+  /* background:transparent url(../assets/Images/twinkling.png) repeat top center; */
+  z-index:1;
+  -moz-animation:up 200s linear infinite;
+  -ms-animation:up 200s linear infinite;
+  -o-animation:up 200s linear infinite;
+  -webkit-animation:up 200s linear infinite;
+  animation:up 200s linear infinite;
+}
 </style>
