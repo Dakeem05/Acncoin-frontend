@@ -12,39 +12,7 @@ const options = {
   threshold: 0 // Adjust threshold as needed
 };
 
-  // const onIntersection = (entries, observer) => {
-  //   const [entry] = entries;
-  //   if (entry.isIntersecting) {
-  //     // The target element is now visible in the viewport
-  //     // Add your animation or CSS class changes here
-  //     // alert('intersecting')
-  //     animate.value.classList.add('animate-gone-up'); // Example: Apply a CSS class 'fade-in'
-  //     observer.unobserve(entry.target)
-  //   } else {
-  //     // alert('not')
-  //     // The target element is no longer visible in the viewport
-  //     // Add your animation or CSS class changes here
-  //     animate.value.classList.remove('animate-gone-up'); // Example: Remove the CSS class 'fade-in'
-  //   }
-  // };
-  // const onIntersection1 = (entries, observer) => {
-  //   const [entry] = entries;
-  //   if (entry.isIntersecting) {
-  //     animate1.value.classList.add('animate-gone-up'); // Example: Apply a CSS class 'fade-in'
-  //     observer.unobserve(entry.target)
-  //   } else {
-  //     animate1.value.classList.remove('animate-gone-up'); // Example: Remove the CSS class 'fade-in'
-  //   }
-  // };
-  // const onIntersection2 = (entries, observer) => {
-  //   const [entry] = entries;
-  //   if (entry.isIntersecting) {
-  //     animate2.value.classList.add('animate-gone-up'); // Example: Apply a CSS class 'fade-in'
-  //     observer.unobserve(entry.target)
-  //   } else {
-  //     animate2.value.classList.remove('animate-gone-up'); // Example: Remove the CSS class 'fade-in'
-  //   }
-  // };
+  
 
   const callback = (entries) => {
   entries.forEach((entry) => {
@@ -99,7 +67,7 @@ const observer = new IntersectionObserver(callback, options);
             <h1 class="uppercase  text-[1.5rem] text-center mx-auto">Mission</h1>  
             <p class="text-center w-[95%] font-mono mx-auto">Is to give best products and services to users by exploring all possible frontiers in new technology and innovations, and also being socially responsible to our planet and our societies.</p>
             </section>
-            <section ref="animate2" :class="{ 'visible': section3Visible }" class="sm:w-[90%] md:w-[70%] sm:ml-auto crypto py-[1.3rem] px-[1rem]">
+            <section ref="animate2" :class="{ 'visible': section3Visible }" class="section sm:w-[90%] md:w-[70%] sm:ml-auto crypto py-[1.3rem] px-[1rem]">
             <h1 class="uppercase  text-[1.5rem] text-center mx-auto">Solution</h1>  
             <p class="text-center w-[95%] font-mono mx-auto">We have planned an ecosystem of new solutions which will help users to save their assets as well as trade and use them for different services in the coming years. Also we will keep on researching on how we can reinvent the wheel in a way that blockchain can be used in most of the areas of day to day life and how it can be used for betterment of humankind and users of the technology.</p>
             </section>
