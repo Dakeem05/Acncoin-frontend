@@ -72,6 +72,55 @@
           </span>
         </div>
     </section>
+
+    <h1 class="text-[2.5rem] md:text-[3.5rem] mt-[3rem] capitalize text-center">HOW TO BUY <span class="font-Oversa text-[#bd8f31]">Acn</span></h1>
+    <section class="flex mt-[2rem] gap-[1rem] lg:flex-row flex-col">
+        <div class="lg:w-[50%] relative  flex flex-col gap-[2rem]  py-[1.5rem]">
+          <span class="flex flex-col sm:flex-row gap-[6px] py-[1rem]  relative">
+            <div class=" relative  ">
+              <p class="text-[3rem] -mt-[2rem] h-fit text-[#BD8F31] text-center">.</p>
+            </div>
+            <div class="">
+              <p class="font-mono text-lg">Download Metamask wallet from  <a id="link" target="__blank" href="https://metamask.io">https://metamask.io</a> and download Trust wallet from <a id="link" target="__blank" href="https://trustwallet.com">https://trustwallet.com</a></p>
+            </div>
+          </span>
+          <span class="flex flex-col sm:flex-row gap-[6px] py-[1rem]  relative">
+            <div class=" relative  ">
+              <p class="text-[3rem] -mt-[2rem] h-fit text-[#BD8F31] text-center">.</p>
+            </div>
+            <div class="">
+              <p class="font-mono text-lg">Add BNB Chain to metamask / Trustwallet and Deposit BNB to your wallet. </p>
+            </div>
+          </span>
+          <span class="flex flex-col sm:flex-row gap-[6px] py-[1rem]  relative">
+            <div class=" relative  ">
+              <p class="text-[3rem] -mt-[2rem] h-fit text-[#BD8F31] text-center">.</p>
+            </div>
+            <div class="">
+              <p class="font-mono text-lg">Connect your wallet to our website and buy ACN</p>
+            </div>
+          </span>
+          <span class="flex flex-col sm:flex-row gap-[6px] py-[1rem]  relative">
+            <div class=" relative  ">
+              <p class="text-[3rem] -mt-[2rem] h-fit text-[#BD8F31] text-center">.</p>
+            </div>
+            <div class="">
+              <p class="font-mono text-lg">When you buy ACN, it will be held in the smart contract and you will be able to unlock when the sale is over. i.e unlock form will pop up when the sale ends</p>
+            </div>
+          </span>
+          <span class="flex flex-col sm:flex-row gap-[6px] py-[1rem]  relative">
+            <div class=" relative  ">
+              <p class="text-[3rem] -mt-[2rem] h-fit text-[#BD8F31] text-center">.</p>
+            </div>
+            <div class="">
+              <p class="font-mono text-lg">Congratulations, you Have successfully purchased ACNCoin.</p>
+            </div>
+          </span>
+        </div>
+        <div class="lg:w-[50%] relative  flex flex-col gap-[2rem]  py-[1.5rem]">
+          <!-- <img src="../../assets/Images/end.png" class="rounded-lg" alt=""> -->
+        </div>
+    </section>
    
    
   </section>
@@ -94,7 +143,10 @@
   height: fit-content;
   z-index: 0;
 }
-
+#link{
+  text-decoration: underline;
+  text-decoration-color:  ;
+}
 @media only screen and (max-width:536px) {
   .box{
     position: relative;
