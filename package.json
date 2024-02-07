@@ -10,8 +10,10 @@
   },
   "dependencies": {
     "axios": "^1.6.7",
+    "chart.js": "^3.9.1",
     "jspdf": "^2.5.1",
     "vue": "^3.3.11",
+    "vue-chart-3": "^3.1.8",
     "vue-router": "^4.2.5",
     "vuetify": "^3.5.2"
   },

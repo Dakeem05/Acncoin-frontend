@@ -1,6 +1,7 @@
 <script setup>
     import { ref } from "vue";
     import Copy from "../Icons/Copy.vue";
+    import Tokenomics from "../charts/Tokenomics.vue";
 
       const isPresaleCopied = ref(false);
     const contractAddress = ref(null);
@@ -69,8 +70,8 @@
             </div>
        
         </div> 
-        <div class="lg:w-[55%]">
-            
+        <div class="mt-[3rem] lg:mt-0 lg:w-[55%]">
+            <tokenomics/>
         </div>
     </section>
    
