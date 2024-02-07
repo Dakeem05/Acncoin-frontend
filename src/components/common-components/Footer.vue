@@ -1,6 +1,6 @@
 <script setup>
 import { ref, watch, onMounted, onBeforeUnmount} from "vue";
-    import Facebook from '../Icons/Facebok.vue';
+    import Telegram from '../Icons/Telegram.vue';
     import instagram from '../Icons/Instagram.vue';
     import X from '../Icons/X.vue';
     import Up from '../Icons/Up.vue';
@@ -146,7 +146,11 @@ let scroll = ref(0);
                   Community
                 </span>
               </h1>
-              <div></div>        
+              <div class="flex text-[1.5rem] gap-3 mt-4">
+                <a href="https://twitter.com/acntoken?t=sL9JwqfjCd808qezdU5n6w&s=09" target="_blank" rel="noopener noreferrer"><x/></a>
+                <a href="https://www.instagram.com/acncoin?igsh=MzRlODBiNWFlZA" target="_blank" rel="noopener noreferrer"><instagram/></a>
+                <a href="https://t.me/acncoinofficial" target="_blank" rel="noopener noreferrer"><telegram/></a>
+              </div>        
             </aside>
         </div>
         <hr class="hidden lg:block mt-9 mx-[2rem] bg-[rgba(255,255,255,0.36)] border-0 rounded h-[2px]">
