@@ -11,7 +11,7 @@
 
 <template>
   <section class="max-w-6xl z-50 gap-[2rem] pb-[3rem] lg:pb-0 lg:gap-0   px-[0.5rem] xs:px-[1rem] sm:px-[2rem] xl:px-[0] mx-auto">
-    <h1 class="text-[2.5rem] md:text-[3.5rem] capitalize text-center">Why buy <span class="font-Oversa text-[#bd8f31]">Acn</span></h1>
+    <h1 class="text-[2.5rem] md:text-[3.5rem] capitalize text-center">Why buy <span class="font-Oversa text-[#bd8f31]">$Acn</span></h1>
     <section class="flex mt-[2rem] gap-[1rem] lg:flex-row flex-col">
         <div class="lg:w-[50%] relative  flex flex-col gap-[2rem]  py-[1.5rem]">
           <span class="flex flex-col sm:flex-row gap-6 py-[1rem]  relative">
@@ -74,7 +74,7 @@
     </section>
 
    <div>
-      <h1 class="text-[2.5rem] md:text-[3.5rem] mt-[3rem] capitalize text-center">HOW TO BUY <span class="font-Oversa text-[#bd8f31]">Acn</span></h1>
+      <h1 class="text-[2.5rem] md:text-[3.5rem] mt-[3rem] capitalize text-center">HOW TO BUY <span class="font-Oversa text-[#bd8f31]">$Acn</span></h1>
       <section class="flex relative mt-[2rem] gap-[1rem] flex-row ">
           <div class="lg:w-[50%] z-10 container  relative  flex flex-col gap-[2rem]  py-[1.5rem]">
             <span class="flex gap-[6px] py-[1rem]  relative">
