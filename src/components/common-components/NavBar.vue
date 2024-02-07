@@ -183,7 +183,7 @@ watch(() => props.activeRoute, (newValue, oldValue) => {
             <li @click="routeHandler('info')" :class="{'text-[#bd8f31] cursor-pointer border-b-[3px] border-b-[#bd8f31]' : activeRoute == 'info'}" class="hover:text-[#bd8f31] hover:cursor-pointer hover:border-b-[3px] capitalize hover:border-b-[#bd8f31] w-fit">
                 info
             </li>
-            <button @click="downloadPdf"  class="hover:text-[#bd8f31] hover:cursor-pointer hover:border-b-[3px] capitalize hover:border-b-[#bd8f31]">
+            <button @click="downloadPdf"  class="hover:text-[#bd8f31] hover:cursor-pointer hover:border-b-[3px] capitalize hover:border-b-[#bd8f31] w-fit">
                 Whitepaper
             </button>
         </ul>
