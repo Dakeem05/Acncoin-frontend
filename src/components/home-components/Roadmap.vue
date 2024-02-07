@@ -94,7 +94,7 @@ const items = ref([
     <section class="lg:w-[80%] sm:mx-auto container mt-[2rem] py-[2rem] sm:p-[2rem]">
         
         <v-timeline align="start" 
-      :side="width < 1024 ? 'end' : ''" line-color="rgba(255, 255, 255, 0.36)"  truncate-line="both">
+      :side="width < 1024 ? 'end' : ''" line-color="rgba(255, 255, 255, 0.36)" density="compact" truncate-line="both">
         <v-timeline-item
           v-for="(item, i) in items"
           :key="i"
@@ -102,7 +102,7 @@ const items = ref([
           fill-dot
           size="0.9rem"
         >
-          <v-card class="bg ">
+          <v-card class="bg -ml-[1.3rem] sm:ml-0">
             <v-card-title class="">
               <p class="text-[#bd8f31] text-[15px]">{{item.date}}</p>
             </v-card-title>

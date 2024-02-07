@@ -55,7 +55,7 @@ onMounted(() => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 const sectionId = entry.target.id;
-                console.log(`Section ${sectionId} is in view.`);
+                // console.log(`Section ${sectionId} is in view.`);
                 activeRoute.value = sectionId
             }
         });
@@ -99,7 +99,7 @@ onMounted(() => {
     <div  id="roadmap" ref="roadmap" class="py-[3rem] relative ">
         <roadmap class="z-[50] relative"/>
     </div>
-    <div  id="info" ref="info" class="py-[3rem] relative ">
+    <div  id="info" ref="info" class="pt-[3rem] relative ">
         <info class="z-[50] relative"/>
     </div>
      <!-- <div class="fixed max-w-4xl  mx-auto flex flex-col  bottom-[1.5rem] gap-[1.5rem] z-[70] right-[1.5rem]">
@@ -161,6 +161,21 @@ onMounted(() => {
     background: radial-gradient(circle, #36280927 0%, #2b1f0369 18%, #18110131 100%);
   }
 
+ ::-webkit-scrollbar {
+  width: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #bd8f31;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #bd8f31;
+  border-radius: 4px;
+}
 
 @keyframes move-twink-back {
     from {background-position:0 0;}

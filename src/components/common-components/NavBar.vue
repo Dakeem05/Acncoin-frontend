@@ -2,10 +2,11 @@
 import Icon from "../Icons/RightArrow.vue";
 import { ref, watch, onMounted, onBeforeUnmount} from "vue";
 import MenuIcon from '../Icons/Menu.vue'
+import axiosInstance from "../../axios";
+import pdfFile from '../../assets/Documents/Acncoin_Whitepaper.pdf';
   import CloseIcon from  "../Icons/CloseIcon.vue";
   const emit = defineEmits(['openBar', 'closeBar'])
   const props = defineProps(['activeRoute'])
-import axiosInstance from "../../axios";
 
 // alert(props.activeRoute)
    let scrolled = ref(false);
@@ -53,13 +54,20 @@ watch(() => props.activeRoute, (newValue, oldValue) => {
 //   alert(newValue);
 });
      
+     const downloadPdf = () => {
+ const link = document.createElement('a');
+  link.href = pdfFile;
+  link.download = 'Acncoin_Whitepaper.pdf';
+  link.click();
+};
+
   onMounted( async ()=>{
     window.addEventListener('scroll', scrollHandler)
     let token = sessionStorage.getItem('fabricspa_token')
      try {
          const res = await axiosInstance.get("V1/auth/getUser")
                 isDashShowButton.value = true
-               
+              
             } catch (err) {
                 // console.error(err.response.data.message)
                 if (err.response.data.message == 'Unauthenticated.'){
@@ -90,23 +98,23 @@ watch(() => props.activeRoute, (newValue, oldValue) => {
       
 //   }
 
-  const logoutHandler = async () => {
-    let token = sessionStorage.getItem('FabricSpa_token')
-    try {
-    const res = await axios.get('https://api-control.tusksite.com/api/V1/auth/logout', {
-             headers:{
-                 Authorization: `Bearer ${token}`,
-                    }
-                });
-                // console.log(res) 
-                sessionStorage.removeItem('FabricSpa_token')
-                sessionStorage.removeItem('status')
-                sessionStorage.removeItem('isVerified')
-                isDashShowButton.value = false
-    } catch (err) {
-        console.error(err)
-    }
-  }
+//   const logoutHandler = async () => {
+//     let token = sessionStorage.getItem('FabricSpa_token')
+//     try {
+//     const res = await axios.get('https://api-control.tusksite.com/api/V1/auth/logout', {
+//              headers:{
+//                  Authorization: `Bearer ${token}`,
+//                     }
+//                 });
+//                 // console.log(res) 
+//                 sessionStorage.removeItem('FabricSpa_token')
+//                 sessionStorage.removeItem('status')
+//                 sessionStorage.removeItem('isVerified')
+//                 isDashShowButton.value = false
+//     } catch (err) {
+//         console.error(err)
+//     }
+//   }
   
   
    function sideBarOpen (){
@@ -207,6 +215,9 @@ watch(() => props.activeRoute, (newValue, oldValue) => {
             <li @click="routeHandler('roadmap')" :class="{'text-[#bd8f31] cursor-pointer border-b-[3px] border-b-[#bd8f31]' : activeRoute == 'roadmap'}" class="hover:text-[#bd8f31] hover:cursor-pointer hover:border-b-[3px] capitalize hover:border-b-[#bd8f31]">
                 roadmap
             </li>
+            <button @click="downloadPdf"  class="hover:text-[#bd8f31] hover:cursor-pointer hover:border-b-[3px] capitalize hover:border-b-[#bd8f31]">
+                Whitepaper
+            </button>
            <!-- <div v-if="isDashShowButton == false" class="flex gap-4 ">
                 <li>
                     <router-link  class="text-[#41aef1] font-bold font-madeForDisplayBold  py-[15px] px-[20px]" to="/login">
