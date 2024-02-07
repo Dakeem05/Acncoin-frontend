@@ -45,7 +45,7 @@
 </script>
 
 <template>
-  <section class="max-w-6xl z-50 gap-[2rem] pb-[3rem] lg:pb-0 lg:gap-0   px-[0.5rem] xs:px-[1rem] sm:px-[2rem] xl:px-[0] mx-auto">
+  <section class="max-w-6xl z-50 gap-[2rem] pb-[3rem] lg:pb-0 lg:gap-0   px-[0.8rem] xs:px-[1rem] sm:px-[2rem] xl:px-[0] mx-auto">
     <h1 class="text-[2.5rem] md:text-[3.5rem] capitalize text-center">tokenomics</h1>
     <section class="flex mt-[2rem] lg:flex-row flex-col">
         <div class="lg:w-[45%] relative bg  px-[2rem] py-[1.5rem]">

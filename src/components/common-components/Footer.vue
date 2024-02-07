@@ -65,7 +65,7 @@ let scroll = ref(0);
 
 <template>
   <section class="bg-[rgba(2,3,7,0.5)]  pt-[3rem] pb-[2rem] mt-[6rem]">
-    <div class="max-w-7xl mx-auto px-[0.5rem] gap-[3rem] lg:gap-[2rem] text-center lg:text-start xs:px-[1rem] sm:px-[2rem] xl:px-[0] flex lg:flex-row flex-col">
+    <div class="max-w-7xl mx-auto px-[0.8rem] gap-[3rem] lg:gap-[2rem] text-center lg:text-start xs:px-[1rem] sm:px-[2rem] xl:px-[0] flex lg:flex-row flex-col">
             <span  class="lg:w-[30%]">
                 <router-link to="/" class="text-[3.2rem] text-black flex flex-col  font-surfer font-[400]">
                     <span class="w-[6.5rem] mx-auto">

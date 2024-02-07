@@ -89,7 +89,7 @@ const items = ref([
 </script>
 
 <template>
-  <section class="max-w-6xl z-50 gap-[2rem] pb-[3rem] lg:pb-0 lg:gap-0   px-[0.5rem] xs:px-[1rem] sm:px-[2rem] xl:px-[0] mx-auto">
+  <section class="max-w-6xl z-50 gap-[2rem] pb-[3rem] lg:pb-0 lg:gap-0   px-[0.8rem] xs:px-[1rem] sm:px-[2rem] xl:px-[0] mx-auto">
     <h1 class=" text-[2.5rem] md:text-[3.5rem] capitalize text-center">roadmap</h1>
     <section class="lg:w-[80%] sm:mx-auto container mt-[2rem] py-[2rem] sm:p-[2rem]">
         

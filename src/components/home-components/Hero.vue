@@ -83,7 +83,7 @@
 </script>
 
 <template>
-    <section class="max-w-6xl z-50 flex lg:flex-row gap-[2rem] pt-[4rem] lg:pt-0 pb-[3rem] lg:pb-0 lg:gap-0 flex-col px-[0.5rem] xs:px-[1rem] sm:px-[2rem] xl:px-[0] mx-auto">
+    <section class="max-w-6xl z-50 flex lg:flex-row gap-[2rem] pt-[4rem] lg:pt-0 pb-[3rem] lg:pb-0 lg:gap-0 flex-col px-[0.8rem] xs:px-[1rem] sm:px-[2rem] xl:px-[0] mx-auto">
         <div class="lg:w-[50%] ">
             <span class=" text-[#bd8f31] text-[4rem] md:text-[4.5rem]  font-Oversa">
                 ACNcoin

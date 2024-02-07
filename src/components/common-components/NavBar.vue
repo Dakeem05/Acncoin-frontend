@@ -139,7 +139,7 @@ watch(() => props.activeRoute, (newValue, oldValue) => {
 
 <template>
   <section>
-        <section class="bg-[rgba(255,_255,_255,_0.14)]  [box-shadow:0_4px_30px_rgba(0,_0,_0,_0.1)] backdrop-filter backdrop-blur-[12.6px] border-b-[1px] border-b-[solid] border-b-[rgba(255,255,255,0.75)] lg:hidden  pt-[0.7rem] pb-[0.7rem] px-1rem xs:px-[2rem] sm:px-[3rem] z-[60] fixed top-0 left-0 flex right-0 w-full">
+        <section class="bg-[rgba(255,_255,_255,_0.14)]  [box-shadow:0_4px_30px_rgba(0,_0,_0,_0.1)] backdrop-filter backdrop-blur-[12.6px] border-b-[1px] border-b-[solid] border-b-[rgba(255,255,255,0.75)] lg:hidden  pt-[0.7rem] pb-[0.7rem] px-[0.7rem] xs:px-[2rem] sm:px-[3rem] z-[60] fixed top-0 left-0 flex right-0 w-full">
             <!-- <router-link class="hover:text-white text-white border-2 absolute  right-[1rem] xs:right-[2rem] sm:right-[3rem] top-[1.3rem] text-sm w-fit xs:text-lg border-white py-[0.2rem] px-[0.2rem] xxs:px-[0.5rem] xs:px-[1rem] sm:px-[2rem] rounded-md font-bold font-madeForDisplayBold" to="/dashboard">
                 Dashboard
             </router-link> -->
@@ -190,7 +190,7 @@ watch(() => props.activeRoute, (newValue, oldValue) => {
     </div>
     <!-- {{'hbhghh' ?? scrolled == true}} -->
     <!-- <div :class="{'fixed top-0 bg-[red] w-[100%] left-0 right-0 z-20' : scrolled == true, '' : scrolled === false,}" class=""> -->
-    <div :class="{'bg-[rgba(255,_255,_255,_0.44)]  [box-shadow:0_4px_30px_rgba(0,_0,_0,_0.1)] backdrop-filter backdrop-blur-[12.6px] border-[1px] border-[solid] border-[rgba(255,255,255,0.75)]  w-[100%] top-[0.6rem] xl:w-[1200px] px-[2.5rem] fixed  right-0 left-0 xl:mx-auto  rounded-[4rem] z-[60] dark:bg-transparent pt-[1rem] pb-[0.5rem] xl:pb-[1rem]' :scrolled === true, 'relative text-white border-b-[1px] backdrop-blur-[8.6px] border-b-[solid] border-b-[rgba(255,255,255,0.75)] xl:px-0 sm:px-[3rem] xs:px-[2rem] xxs:px-[1rem] px-[0.5rem] py-[0.7rem] flex' : scrolled === false, 'hidden lg:block' : isSide}" class=" px-0 z-20 top-0 hidden lg:block ">
+    <div :class="{'bg-[rgba(255,_255,_255,_0.44)]  [box-shadow:0_4px_30px_rgba(0,_0,_0,_0.1)] backdrop-filter backdrop-blur-[12.6px] border-[1px] border-[solid] border-[rgba(255,255,255,0.75)]  w-[100%] top-[0.6rem] xl:w-[1200px] px-[2.5rem] fixed  right-0 left-0 xl:mx-auto  rounded-[4rem] z-[60] dark:bg-transparent pt-[1rem] pb-[0.5rem] xl:pb-[1rem]' :scrolled === true, 'relative text-white border-b-[1px] backdrop-blur-[8.6px] border-b-[solid] border-b-[rgba(255,255,255,0.75)] xl:px-0 sm:px-[3rem] xs:px-[2rem] xxs:px-[1rem] px-[0.8rem] py-[0.7rem] flex' : scrolled === false, 'hidden lg:block' : isSide}" class=" px-0 z-20 top-0 hidden lg:block ">
         <!-- <div class=""> -->
         <div class="max-w-6xl mx-auto  flex block relative">
         <div >
